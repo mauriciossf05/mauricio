@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo de Tag Aside</title>
+    <link rel="stylesheet"  href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Header</h1>
+    </header>
+    <nav class="menu_nav">
+        <ul class="menu_list">
+            <li class="menu_nav_item"><a href="index.html">Home</a></li>
+            <li class="menu_nav_item"><a href="sobre.html">Sobre</a></li>
+            <li class="menu_nav_item"><a href="servicos.html">Serviços</a></li>
+            <li class="menu_nav_item"><a href="contato.html">Contato</a></li>
+        </ul>
+    </nav>
+    <main id="main_id">
+        <h2>Main Content</h2>
+        <p>Espaço reservado para um artigo no conteúdo principal</p>
+        <section class="section section_space_type_1">
+            <h3>Section 1</h3>
+            <div class="slideshow-container">
+                <div class="mySlides fade active">
+                    <img src="Furia_Esports_logo copy.png" style="width:100%">
+                </div>
+                <div class="mySlides fade">
+                    <img src="10001736 copy.jpg" style="width:100%">
+                </div>
+                <div class="mySlides fade">
+                    <img src="coracao copy.png" style="width:100%">
+                </div>
+                <br>
+                <button class="button" onclick="changeSlide(-1)">◄</button>
+                <button class="button" onclick="changeSlide(1)">►</button>
+            </div>
+        </section>
+
+        <script>
+            let currentSlideIndex = 0;
+            const slides = document.querySelectorAll('.mySlides');
+        
+            function changeSlide(n) {
+                slides[currentSlideIndex].classList.remove('active');
+                currentSlideIndex = (currentSlideIndex + n + slides.length) % slides.length;
+                slides[currentSlideIndex].classList.add('active');
+            }
+        </script>
+        <hr>
+        <hr>
+        <section class="section section_space_type_2">
+            <h3>Section 2</h3>
+            <p>Espaço reservado para seção 2</p>
+        </section>
+    </main>
+    <aside class="menu_aside">
+        <h2>Tópicos</h2>
+        <ul>
+            <li class="menu_aside_item"><a href="#">Tópico 1</a></li>
+            <li class="menu_aside_item"><a href="#">Tópico 2</a></li>
+            <li class="menu_aside_item"><a href="#">Tópico 3</a></li>
+        </ul>
+        <h2>Links importantes</h2>
+        <ul> 
+            <li class="menu_aside_2_item"><a href="https://www.google.com.br/" target="_blank">Google</a></li>
+            <li class="menu_aside_2_item"><a href="https://github.com/"  target="_blank">Github</a></li>
+            <li class="menu_aside_2_item"><a href="https://br.linkedin.com/"  target="_blank">Linkedin</a></li>
+        </ul>
+    </aside>
+    <footer>
+        <h2>Footer</h2>
+        <p>This is the footer of the page.</p>
+    </footer>
+</body>
+</html>
